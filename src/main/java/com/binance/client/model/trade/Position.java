@@ -29,6 +29,8 @@ public class Position {
 
     private String positionSide;
 
+    private String positionAmt;
+
     public Boolean getIsolated() {
         return isolated;
     }
@@ -117,6 +119,14 @@ public class Position {
         this.positionSide = positionSide;
     }
 
+    public String getPositionAmt() {
+        return positionAmt;
+    }
+
+    public void setPositionAmt(String positionAmt) {
+        this.positionAmt = positionAmt;
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
@@ -125,6 +135,8 @@ public class Position {
                 .append("positionInitialMargin", positionInitialMargin).append("symbol", symbol)
                 .append("unrealizedProfit", unrealizedProfit).append("entryPrice", entryPrice)
                 .append("maxNotional", maxNotional).append("positionSide", positionSide)
-                .append("isolated", isolated).toString();
+                .append("isolated", isolated)
+                .append("positionAmt", positionAmt)
+                .toString();
     }
 }
