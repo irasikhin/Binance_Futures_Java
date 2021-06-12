@@ -19,6 +19,8 @@ public class Order {
 
     private BigDecimal price;
 
+    private BigDecimal avgPrice;
+
     private Boolean reduceOnly;
 
     private String side;
@@ -85,6 +87,14 @@ public class Order {
 
     public void setPrice(BigDecimal price) {
         this.price = price;
+    }
+
+    public BigDecimal getAvgPrice() {
+        return avgPrice;
+    }
+
+    public void setAvgPrice(BigDecimal avgPrice) {
+        this.avgPrice = avgPrice;
     }
 
     public Boolean getReduceOnly() {
@@ -170,10 +180,24 @@ public class Order {
     @Override
     public String toString() {
         return new ToStringBuilder(this, BinanceApiConstants.TO_STRING_BUILDER_STYLE)
-                .append("clientOrderId", clientOrderId).append("cumQuote", cumQuote).append("executedQty", executedQty)
-                .append("orderId", orderId).append("origQty", origQty).append("price", price)
-                .append("reduceOnly", reduceOnly).append("side", side).append("positionSide", positionSide).append("status", status)
-                .append("stopPrice", stopPrice).append("symbol", symbol).append("timeInForce", timeInForce)
-                .append("type", type).append("updateTime", updateTime).append("workingType", workingType).toString();
+                .append("clientOrderId", clientOrderId)
+                .append("cumQuote", cumQuote)
+                .append("executedQty", executedQty)
+                .append("orderId", orderId)
+                .append("origQty", origQty)
+                .append("price", price)
+                .append("avgPrice", avgPrice)
+                .append("reduceOnly", reduceOnly)
+                .append("side", side)
+                .append("positionSide", positionSide)
+                .append("status", status)
+                .append("stopPrice", stopPrice)
+                .append("symbol", symbol)
+                .append("timeInForce", timeInForce)
+                .append("type", type)
+                .append("updateTime", updateTime)
+                .append("workingType", workingType)
+                .toString();
     }
+
 }
